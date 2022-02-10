@@ -52,7 +52,27 @@
 .photo-grid{
     width: 900px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.first-item{
+    order: 4;
+}
+.last-item{
+    order: 3;
+}
+.second-item{
+    order: 2;
+
+}
+.third-item{
+    order: 1;
+}
+.fourth-item{
+    order: 5;
 }
 
 .photo-grid-item {
