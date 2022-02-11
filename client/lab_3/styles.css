@@ -4,12 +4,11 @@
   box-sizing: border-box;
 }
 
-
 .wrapper {
-    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
-    margin:0;
-  }
-
+  font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
+    ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+  margin: 0;
+}
 
 .top-header {
   width: 100%;
@@ -70,24 +69,15 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
 }
 
 .first-item {
-  order: 4;
-}
-.last-item {
-  order: 3;
-}
-.second-item {
-  order: 2;
-}
-.third-item {
   order: 1;
 }
-.fourth-item {
-  order: 5;
+.last-item {
+  order: -1;
 }
 
 .photo-grid-item {
