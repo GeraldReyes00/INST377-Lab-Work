@@ -134,6 +134,9 @@
 
 .carousel .carousel_item--visible {
     display: block;
+    /*
+    animation: fadeVisibility 0.5s;
+    */
 }
 
 .carousel .carousel_actions {
@@ -161,3 +164,15 @@
 .carousel .carousel_actions button #carousel_button--next{
     margin-right: 20px;
 }
+
+/*
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
+*/
