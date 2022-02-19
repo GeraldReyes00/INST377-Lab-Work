@@ -1,116 +1,163 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .wrapper {
-    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
-      ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
-    margin: 0;
-  }
-  
-  .top-header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
+    ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+  margin: 0;
+}
+
+.top-header {
+  width: 100%;
+  display: inline-block;
+  background-color: rgba(0, 139, 139, 0.8);
+  padding: 10px 15px;
+  margin: 0;
+  margin-bottom: 0px;
+}
+
+.menu-container {
+  color: #fff;
+  background-color: #5995da;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  border: 1px solid #fff;
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-page {
+  margin-left: 20px;
+}
+
+.header-container {
+  color: #5995da;
+  background-color: #d6e9fe;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-grid {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.first-item {
+  order: 1;
+}
+.last-item {
+  order: -1;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+}
+
+.group-project,
+.github {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #d6e9fe;
+  height: 200px;
+  flex: 1;
+}
+
+.footer-one,
+.footer-three {
+  background-color: #5995da;
+  flex: initial;
+  width: 300px;
+}
+
+.data-demo {
+  margin-left: 20px;
+}
+
+.carousel {
+  overflow: hidden;
+  max-width: 300px;
+  position: relative;
+}
+
+.carousel .carousel_item,
+.carousel .carousel_item--hidden {
+  display: none;
+}
+
+.carousel .carousel_item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.carousel .carousel_item--visible {
+    display: block;
+}
+
+.carousel .carousel_actions {
+    display: flex;
     width: 100%;
-    display: inline-block;
-    background-color: rgba(0, 139, 139, 0.8);
-    padding: 10px 15px;
-    margin: 0;
-    margin-bottom: 0px;
-  }
-  
-  .menu-container {
-    color: #fff;
-    background-color: #5995da;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .menu {
-    border: 1px solid #fff;
-    width: 900px;
-    display: flex;
     justify-content: space-between;
-  }
-  
-  .links {
-    border: 1px solid #fff;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .main-page {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel_actions button{
+    border-radius: 50px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel .carousel_actions button #carousel_button--prev{
     margin-left: 20px;
-  }
-  
-  .header-container {
-    color: #5995da;
-    background-color: #d6e9fe;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .header {
-    width: 900px;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .photo-grid-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .photo-grid {
-    width: 900px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    align-items: center;
-  }
-  
-  .first-item {
-    order: 1;
-  }
-  .last-item {
-    order: -1;
-  }
-  
-  .photo-grid-item {
-    border: 1px solid #fff;
-    width: 300px;
-    height: 300px;
-  }
-  
-  .group-project,
-  .github {
-    align-self: flex-end;
-    margin-bottom: 20px;
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .footer-item {
-    border: 1px solid #fff;
-    background-color: #d6e9fe;
-    height: 200px;
-    flex: 1;
-  }
-  
-  .footer-one,
-  .footer-three {
-    background-color: #5995da;
-    flex: initial;
-    width: 300px;
-  }
-  
-  .data-demo {
-    margin-left: 20px;
-  }
+}
+
+.carousel .carousel_actions button #carousel_button--next{
+    margin-right: 20px;
+}
