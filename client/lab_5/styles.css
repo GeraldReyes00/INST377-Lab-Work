@@ -10,6 +10,10 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
     ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   background-color: darkslategray;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Page Layout */
@@ -24,4 +28,20 @@ body {
 .container {
   max-width: 960px;
   margin-top: 25px;
+}
+
+.speaker-form-header {
+  text-align: center;
+  background-color: #F6F7F8;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  width: 80%;
+  margin: 40px 0;
+  padding: 50px;
+}
+
+.speaker-form-header h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
