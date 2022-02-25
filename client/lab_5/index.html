@@ -15,7 +15,7 @@
         <p><em>Want to speak at our fake conference? Fill out this form.</em></p>
     </header>
 
-    <form action="" method="get" class="speaker-form">
+    <form action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json" method="get" class="speaker-form">
         <div class="form-row">
             <label for="full-name">First Name</label>
             <input id="full-name" name = 'full-name' type="text"/>
@@ -25,6 +25,14 @@
             <label for="food-name">Food Preference</label>
             <input id="food-name" name = 'food-name' type="text"/>
         </div>
+
+        <fieldset class = 'legacy-form-row'>
+            <legend>Veggie or Vegan?</legend>
+            <label for = 'food-type-1' class = 'radio-label'>Yes</label>
+            <input id = 'food-type-1' name = 'food-type' type = 'radio' value = 'Yes'/>
+            <label for = 'food-type-2' class="radio-label">No</label>
+            <input id = 'food-type-2' name = 'food-type' type = 'radio' value = 'No'/>   
+        </fieldset>
 
     </form>
 
