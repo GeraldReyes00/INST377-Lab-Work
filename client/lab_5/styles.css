@@ -39,9 +39,8 @@ html {
 }
 
 .speaker-form-header {
-  text-align: center;
-  background-color: #F6F7F8;
-  border: 1px solid #D6D9DC;
+  background-color: hsl(48, 100%, 77%);
+  border: 1px solid #000000;
   border-radius: 3px;
 
   width: 80%;
@@ -54,14 +53,15 @@ html {
   margin-bottom: 20px;
 }
 
-.speaker-form {
+.main-form {
   background-color: #F6F7F8;
   border: 1px solid #D6D9DC;
   border-radius: 3px;
 
-  width: 80%;
+  width: 350px;
   padding: 50px;
   margin: 0 0 40px 0;
+  flex: initial;
 }
 
 .form-row {
@@ -85,10 +85,31 @@ html {
   margin-bottom: 15px;
 }
 
+.future-content {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding-left: 20px;
+  width: 600px;
+  height: 10%;
+  flex-wrap: wrap;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
 @media only screen and (min-width: 700px) {
-  .speaker-form-header,
-  .speaker-form {
-    width: 600px;
+  
+
+  .main-form {
+    flex: initial;
   }
 
   .form-row {
