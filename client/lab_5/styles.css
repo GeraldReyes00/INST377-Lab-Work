@@ -38,6 +38,15 @@ html {
   margin-top: 25px;
 }
 
+.header {
+  display: flex;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px;
+  align-items: center;
+}
+
+
 .speaker-form-header {
   background-color: hsl(48, 100%, 77%);
   border: 1px solid #000000;
@@ -54,7 +63,7 @@ html {
   margin-bottom: 20px;
 }
 
-.main-form {
+.main_form {
   background-color: #F6F7F8;
   border: 1px solid #D6D9DC;
   border-radius: 3px;
@@ -68,12 +77,14 @@ html {
 }
 
 .form-row {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
+
 
 .form-row input[type='text'] {
   background-color: #FFFFFF;
@@ -108,49 +119,25 @@ html {
   margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 700px) {
-  
 
-  .main-form {
-    flex: initial;
-  }
+.form-row button {
+  font-size: 16px;
+  font-weight: bold;
 
-  .form-row {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  .form-row input[type = 'text']{
-    width: 250px;
-    height: initial;
-  }
-  .form-row label {
-    text-align: left;
-    width: 120px;
-    margin-top: 7px;
-    padding-right: 0px;
-  }
+  color: #FFFFFF;
+  background-color: #63af67;
 
-  .form-row button {
-    font-size: 16px;
-    font-weight: bold;
+  border: none;
+  border-radius: 3px;
 
-    color: #FFFFFF;
-    background-color: #63af67;
+  padding: 10px 40px;
+  cursor: pointer;
+}
 
-    border: none;
-    border-radius: 3px;
+.form-row button:hover {
+  background-color: #79ad7c;
+}
 
-    padding: 10px 40px;
-    cursor: pointer;
-  }
-
-  .form-row button:hover {
-    background-color: #79ad7c;
-  }
-
-  .form-row button:active {
-    background-color: #54b159;
-  }
-
+.form-row button:active {
+  background-color: #54b159;
 }
