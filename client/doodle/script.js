@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             firstPlatform.classList.remove('platform')
             platforms.shift()
             score++
-            console.log(platforms)
+            //console.log(platforms)
             let newPlatform = new Platform(600)
             platforms.push(newPlatform)
         }
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ((doodlerLeftSpace + 60) >= platform.left) && 
           (doodlerLeftSpace <= (platform.left + 85)) &&
           (!isJumping)) {
-              console.log('landed')
+              //console.log('landed')
               startPoint = doodlerBottomSpace
               jump()
 
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function gameOver () {
-    console.log('game over')
+    //console.log('game over')
     isGameOver = true
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild)
