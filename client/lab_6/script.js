@@ -8,9 +8,11 @@ function getRandomIntInclusive(min, max) {
 function dataHandler(dataArray) {
   console.table(dataArray); // this is called "dot notation"
   const range = [...Array(15).keys()];
-  range.forEach((item) => {
-    console.log('range item', item);
+  const listItems = range.map((item, index) => {
+    const restNum = getRandomIntInclusive(0, dataArray.length - 1);
+    return dataArray[restNum];
   });
+  console.log(listItems)
 }
 
 async function mainEvent() { // the async keyword means we can make API requests
@@ -36,7 +38,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
 
-      dataHandler(arrayFromJson.data);
+      const restoArray = dataHandler(arrayFromJson.data);
     });
   }
 }
