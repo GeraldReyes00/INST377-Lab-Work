@@ -12,7 +12,20 @@ function dataHandler(dataArray) {
     const restNum = getRandomIntInclusive(0, dataArray.length - 1);
     return dataArray[restNum];
   });
-  console.log(listItems)
+  // console.log(listItems)
+  return listItems;
+}
+
+function createHtmlList(collection) {
+  const targetList = document.querySelector('#resto-list');
+  targetList.innerHTML = '';
+  collection.forEach((item) => {
+    const {name} = item;
+    const displayName = name.toLowerCase();
+    // const injectThisItem = `<li>${item.name}</li>`;
+    const injectThisItem = `<li>${displayName}</li>`;
+    targetList.innerHTML += injectThisItem;
+  });
 }
 
 async function mainEvent() { // the async keyword means we can make API requests
@@ -39,6 +52,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       // it contains all 1,000 records we need
 
       const restoArray = dataHandler(arrayFromJson.data);
+      createHtmlList(restoArray);
     });
   }
 }
