@@ -17,6 +17,7 @@ function getRandomIntInclusive(min, max) {
   }
   
   function createHtmlList(collection) {
+    console.table(collection);
     const targetList = document.querySelector('#resto-list');
     targetList.innerHTML = '';
     collection.forEach((item) => {
