@@ -53,14 +53,18 @@ async function mainEvent() { // the async keyword means we can make API requests
     let currentArray = [];
 
     resto.addEventListener('input', async (event) => {
-      if (currentArray === undefined) {
+      if (currentArray === undefined || currentArray.length < 1) {
         return;
       }
-      console.log(event.target.value);
+      //console.log(event.target.value);
 
-      const matchResto = currentArray.filter((item) => item.name.includes(event.target.value));
-      console.log(matchResto);
-
+      const selectResto = currentArray.filter((item) => {
+        const lowerName = item.name.toLowerCase();
+        const lowerValue = event.target.value.toLowerCase();
+        return lowerName.includes(lowerValue);
+      });
+      createHtmlList(selectResto);
+      // console.log(matchResto);
     });
 
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
@@ -69,8 +73,8 @@ async function mainEvent() { // the async keyword means we can make API requests
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
 
-      const restoArray = dataHandler(arrayFromJson.data);
-      createHtmlList(restoArray);
+      currentArray = dataHandler(arrayFromJson.data);
+      createHtmlList(currentArray);
     });
   }
 }
