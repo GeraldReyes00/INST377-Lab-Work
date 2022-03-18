@@ -56,7 +56,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       if (currentArray === undefined || currentArray.length < 1) {
         return;
       }
-      //console.log(event.target.value);
+      console.log(event.target.value);
 
       const selectResto = currentArray.filter((item) => {
         const lowerName = item.name.toLowerCase();
@@ -67,6 +67,24 @@ async function mainEvent() { // the async keyword means we can make API requests
       // console.log(matchResto);
     });
 
+    zipcode.addEventListener('input', async (event) => {
+      if (currentArray === undefined || currentArray.length < 1) {
+        return;
+      }
+      console.log(event.target.value);
+
+      const selectZip = currentArray.filter((item) => {
+        // const lowerName = item.name.toLowerCase();
+        // const lowerValue = event.target.value.toLowerCase();
+        return item.zip.includes(event.target.value);
+      });
+      createHtmlList(selectZip);
+      // console.log(matchResto);
+    });
+
+
+
+
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
       submitEvent.preventDefault(); // This prevents your page from refreshing!
       // console.log('form submission'); // this is substituting for a "breakpoint"
@@ -74,6 +92,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       // it contains all 1,000 records we need
 
       currentArray = dataHandler(arrayFromJson.data);
+      console.table(currentArray);
       createHtmlList(currentArray);
     });
   }
