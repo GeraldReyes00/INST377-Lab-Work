@@ -1,15 +1,38 @@
+.body {
+    display: flex;
+}
+
 .game-container {
     width: 500px;
     height: 730px;
     position: absolute;
+    left: 80px;
 }
 
 .borderLeft {
-    width: 60px;
+    width: 80px;
     height: 790px;
     position: absolute;
     background-color: white;
-    z-index: +1;
+    z-index: +2;
+}
+
+.borderRight {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    left: 580px;
+}
+
+.borderTop {
+    width: 660px;
+    height: 50px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    top: -50px;
 }
 
 .sky {
