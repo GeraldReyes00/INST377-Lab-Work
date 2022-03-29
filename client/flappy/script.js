@@ -31,5 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keyup', control);
 
+  function generateObstacle() {
+
+    let randomHeight = Math.random() * 60;
+    let obstacleLeft = 500;
+    let obstacleBottom = randomHeight;
+
+      const obstacle = document.createElement('div');
+      obstacle.classList.add('obstacle');
+      gameDisplay.appendChild(obstacle);
+      obstacle.style.left = obstacleLeft + 'px'
+      obstacle.style.bottom = obstacleBottom + 'px'
+  }
+
+  generateObstacle();
+
   //clearInterval(timerId);
 });
