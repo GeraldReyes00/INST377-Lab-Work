@@ -4,6 +4,14 @@
     position: absolute;
 }
 
+.borderLeft {
+    width: 60px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +1;
+}
+
 .sky {
     background-color: lightblue;
     width: 500px;
@@ -17,6 +25,7 @@
     height: 150px;
     position: absolute;
     top: 580px;
+    z-index: +1;
 }
 
 .bird {
