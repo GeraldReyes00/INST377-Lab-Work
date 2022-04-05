@@ -29,9 +29,9 @@ function createHtmlList(collection) {
   });
 }
 
-function initMap() {
-  const latLong = [76.8721, 38.7849];
-  const map = L.map('map').setView([51.505, -0.09], 13);
+function initMap(name) {
+  const latLong = [38.7849, -76.8721];
+  const map = L.map(name).setView(latLong, 13);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -43,6 +43,15 @@ function initMap() {
   }).addTo(map);
 
   return map;
+}
+
+function addMapMarkers(map, collection) {
+
+  collection.forEach(item => {
+    const point = item.geocoded_column_1?.coordinates;
+    console.log(item.geocoded_column_1?.coordinates);
+    L.marker([point[1], point[0]]).addTo(map);
+  });
 }
 
 
@@ -57,7 +66,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
   const resto = document.querySelector('#resto_name');
   const zipcode = document.querySelector('#zipcode');
-  const map = initMap();
+  const map = initMap('map');
 
   if (localStorage.getItem('restaurants') === undefined) {
     const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
@@ -75,7 +84,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
   // If statement that wraps form listener
   // This if statement prevents a race condition on loading data
-  if (storedData.length > 0) {
+  if (storedDataArray.data.length > 0) {
     // Set submit button style to block
     submit.style.setProperty('display', 'block');
 
@@ -112,8 +121,6 @@ async function mainEvent() { // the async keyword means we can make API requests
     });
 
 
-
-
     form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
       submitEvent.preventDefault(); // This prevents your page from refreshing!
       // console.log('form submission'); // this is substituting for a "breakpoint"
@@ -123,6 +130,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       currentArray = dataHandler(storedDataArray.data);
       console.table(currentArray);
       createHtmlList(currentArray);
+      addMapMarkers(map, currentArray);
     });
   }
 }
