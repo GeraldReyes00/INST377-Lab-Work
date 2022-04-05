@@ -30,6 +30,7 @@ function createHtmlList(collection) {
 }
 
 function initMap() {
+  const latLong = [76.8721, 38.7849];
   const map = L.map('map').setView([51.505, -0.09], 13);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -58,16 +59,23 @@ async function mainEvent() { // the async keyword means we can make API requests
   const zipcode = document.querySelector('#zipcode');
   const map = initMap();
 
-  //const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
-  //const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+  if (localStorage.getItem('restaurants') === undefined) {
+    const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
+    const arrayFromJson = await results.json(); // This changes it into data we can use - an object
+    localStorage.setItem('restaurants', JSON.stringify(arrayFromJson));
+  }
+  
+
+  const storedData = localStorage.getItem('restaurants');
+  const storedDataArray = JSON.parse(storedData);
 
 
-  let arrayFromJson = {data: []}; //to-do: remove debug tool
+  //let arrayFromJson = {data: []}; //to-do: remove debug tool
 
 
   // If statement that wraps form listener
   // This if statement prevents a race condition on loading data
-  if (arrayFromJson.data.length > 0) {
+  if (storedData.length > 0) {
     // Set submit button style to block
     submit.style.setProperty('display', 'block');
 
@@ -112,7 +120,7 @@ async function mainEvent() { // the async keyword means we can make API requests
       // arrayFromJson.data - we're accessing a key called 'data' on the returned object
       // it contains all 1,000 records we need
 
-      currentArray = dataHandler(arrayFromJson.data);
+      currentArray = dataHandler(storedDataArray.data);
       console.table(currentArray);
       createHtmlList(currentArray);
     });
