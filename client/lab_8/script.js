@@ -46,6 +46,13 @@ function initMap(name) {
 }
 
 function addMapMarkers(map, collection) {
+  // remove existing markers
+  map.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      layer.remove();
+    }
+  });
+  
   collection.forEach(item => {
     const point = item.geocoded_column_1?.coordinates;
     console.log(item.geocoded_column_1?.coordinates);
@@ -101,6 +108,16 @@ async function mainEvent() { // the async keyword means we can make API requests
         return lowerName.includes(lowerValue);
       });
       createHtmlList(selectResto);
+      
+      // Only display first five elements that match the name
+      if (selectResto.length > 5) {
+        const subList = selectResto.slice(0, 5);
+        addMapMarkers(map, subList);
+      }
+      else {
+        addMapMarkers(map, selectResto);
+      }
+      
       // console.log(matchResto);
     });
 
@@ -117,6 +134,16 @@ async function mainEvent() { // the async keyword means we can make API requests
       });
       createHtmlList(selectZip);
       // console.log(matchResto);
+
+      // Only display first five elements that match the name
+      if (selectZip.length > 5) {
+        const subList = selectZip.slice(0, 5);
+        addMapMarkers(map, subList);
+      }
+      else {
+        addMapMarkers(map, selectZip);
+      }
+
     });
 
 
