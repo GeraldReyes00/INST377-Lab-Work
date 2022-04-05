@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Gerald Reyes Lab 7: Filtering Data With A Typehead Form Input</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css' />
+    <link rel='stylesheet' href='styles.css' />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+</head>
+
+<body class='wrapper'>
+    <header class='speaker-form-header'>
+        <h1>Gerald Reyes's Lab 7</h1>
+    </header>
+
+    <div class="content-container">
+        <form method="get" class="main_form box">
+            <div class="form-row field">
+                <label for = "resto_name" class = "label" for="full-name">Restaurant Name</label>
+                <div class = "control">
+                <input class = "input" id="resto_name" name='resto_name' type="text" />
+            </div>
+            </div>
+
+            <div class="form-row field">
+                <label class = "label" for="zipcode">Zipcode</label>
+                <div class = "control">
+                <input class = "input" id="zipcode" name='zipcode' type="text" />
+            </div>
+            </div>
+
+            <fieldset class='legacy-form-row'>
+                <legend class="veggie-label label">Veggie or Vegan?</legend>
+                <label for='food-type-1' class='radio-label'>Yes</label>
+                <input id='food-type-1' name='food-type' type='radio' value='Yes' />
+                <label for='food-type-2' class="radio-label">No</label>
+                <input id='food-type-2' name='food-type' type='radio' value='No' />
+            </fieldset>
+
+            <div class="form-row">
+                <button class = 'submit_button'>Change Restaurants</button>
+            </div>
+
+        </form>
+
+        <div class="future-content box">
+            <div id="map"></div>
+            <h2><b>Restaurants List</b></h2>
+            <ul id = "resto-list"></ul>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
